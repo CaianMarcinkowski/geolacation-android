@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+// Created by Caian Marcinkowski Ferreira
+// Git: https://github.com/CaianMarcinkowski
 
 public class LocationListener implements android.location.LocationListener {
       

@@ -11,6 +11,9 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+// Created by Caian Marcinkowski Ferreira
+// Git: https://github.com/CaianMarcinkowski
+
 public class Geolocation extends AppCompatActivity {
       
       @Override
@@ -31,23 +34,23 @@ public class Geolocation extends AppCompatActivity {
                   
                   return;
             }
-      
+            
             LocationManager locationManager = (LocationManager) getSystemService(Geolocation.this.LOCATION_SERVICE);
             LocationListener locationListener = new LocationListener();
             
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             
-            if(locationManager.isProviderEnabled(locationManager.GPS_PROVIDER)){
+            if (locationManager.isProviderEnabled(locationManager.GPS_PROVIDER)) {
                   String message = "Latitude: " + locationListener.getLatitude() + "/n" +
                           "Longitude: " + locationListener.getLongitude();
-      
+                  
                   Toast.makeText(Geolocation.this, message, Toast.LENGTH_LONG);
             } else {
                   Toast.makeText(Geolocation.this, "GPS not enabled!", Toast.LENGTH_LONG);
             }
-      
+            
             WebView webView = findViewById(R.id.wvMap);
             webView.getSettings().setJavaScriptEnabled(true);
-            webView.loadUrl("https://www.google.com/maps/search/?api=1&query="+locationListener.getLatitude()+","+locationListener.getLongitude());
+            webView.loadUrl("https://www.google.com/maps/search/?api=1&query=" + locationListener.getLatitude() + "," + locationListener.getLongitude());
       }
 }
