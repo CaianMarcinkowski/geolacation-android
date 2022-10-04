@@ -41,12 +41,12 @@ public class Geolocation extends AppCompatActivity {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             
             if (locationManager.isProviderEnabled(locationManager.GPS_PROVIDER)) {
-                  String message = "Latitude: " + locationListener.getLatitude() + "/n" +
+                  String message = "Latitude: " + locationListener.getLatitude() + "\n" +
                           "Longitude: " + locationListener.getLongitude();
                   
-                  Toast.makeText(Geolocation.this, message, Toast.LENGTH_LONG);
+                  Toast.makeText(Geolocation.this, message, Toast.LENGTH_LONG).show();
             } else {
-                  Toast.makeText(Geolocation.this, "GPS not enabled!", Toast.LENGTH_LONG);
+                  Toast.makeText(Geolocation.this, "GPS not enabled!", Toast.LENGTH_LONG).show();
             }
             
             WebView webView = findViewById(R.id.wvMap);
